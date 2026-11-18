@@ -188,7 +188,10 @@
 							"value": "@variables('start_time')",
 							"type": "Expression"
 						},
-						"table_name": "@activity('read table details').output.firstRow.silver_table_name"
+						"table_name": {
+							"value": "@activity('read table details').output.firstRow.silver_table_name",
+							"type": "Expression"
+						}
 					}
 				},
 				"linkedServiceName": {
@@ -197,7 +200,7 @@
 				}
 			},
 			{
-				"name": "update failed status",
+				"name": "update success status",
 				"type": "Script",
 				"dependsOn": [
 					{
